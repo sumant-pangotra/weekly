@@ -31,9 +31,9 @@ function getQueryParam(param) {
 }
 
 // Function to fetch data from the endpoint
-async function fetchData(dob) {
+async function fetchData(dob,country,gender) {
     const baseUrl = window.location.origin; // Get the base URL
-    const url = `${baseUrl}/life/weeks?dob=${dob}`;
+    const url = `${baseUrl}/life/weeks?dob=${dob}&country=${country}&sex=${gender}`;
 
     try {
         const response = await fetch(url);
@@ -123,7 +123,7 @@ async function initializeUI() {
             const dateOfBirth = getQueryParam('dob');
 
             if (dob) {
-                const data = await fetchData(dateOfBirth);
+                const data = await fetchData(dateOfBirth,country,gender);
                 if (data) {
                     const { totalWeeks, weeksLived } = data;
                     generateProgressBar(totalWeeks, weeksLived);

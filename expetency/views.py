@@ -28,9 +28,6 @@ def get_weeks(request):
     dob = dob.split("-")
     if not len(dob) == 3:
         raise Exception("Invalid Date Of Birth")
-    life_expetency_weeks = (75 * 365) // 7
-    now = datetime.utcnow().date()
-    delta = now - datetime(int(dob[2]),int(dob[1]),int(dob[0])).date()
-    return Response({"weeksLived":delta.days // 7, "totalWeeks":life_expetency_weeks})
+    return Response(lifeExpetencyService.get_weeks_lived(int(dob[0]),int(dob[1]),int(dob[2]),request.GET.get('country'),request.GET.get('sex')))
     
 
