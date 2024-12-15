@@ -53,7 +53,7 @@ def get_weeks(request,userId):
     life_expetency_weeks = (user.life_expetency_years * 365) // 7
     now = datetime.utcnow().date()
     delta = now - user.date_of_birth
-    return Response({"completedWeeks":delta.days // 7, "expectedWeeks":life_expetency_weeks})
+    return Response({"weeksLived":delta.days // 7, "totalWeeks":life_expetency_weeks})
 
 
 

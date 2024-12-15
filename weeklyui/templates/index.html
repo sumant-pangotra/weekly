@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weeks Lived</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="number" id="day" placeholder="Day" min="1" max="31">
+            <input type="number" id="month" placeholder="Month" min="1" max="12">
+            <input type="number" id="year" placeholder="Year" min="1900" max="2100">
+            <select id="country">
+                <option value="">Select Country</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+            <select id="gender">
+                <option value="">Select Sex</option>
+                <!-- Options will be populated dynamically -->
+            </select>
+            <button id="calculate-button">Calculate</button>
+        </div>
+        <h1>Weeks Lived</h1>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p id="progress-text"></p>
+        </div>
+        <div class="weeks-grid">
+            <!-- Weeks will be generated dynamically -->
+        </div>
+    </div>    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

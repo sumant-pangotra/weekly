@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.container {
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
+    justify-content: center;
+    gap: 10px; /* Added gap for better spacing */
+}
+
+.input-container input,
+.input-container select {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 120px; /* Increased width to accommodate longer country names */
+    background-color: #424242; /* Dark background for inputs */
+    color: #ffffff; /* Light text color */
+    border: 1px solid #555555;
+    border-radius: 5px;
+    appearance: none; /* Remove default styles for select */
+}
+
+.input-container button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+}
+
+h1 {
+    font-size: 2.5em; /* Increase the font size of the heading */
+}
+
+.progress-container {
+    width: 80%;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #424242; /* Darker background for progress bar */
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    height: 50px; /* Increase height of the progress bar */
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+#progress-text {
+    margin-top: 20px;
+    font-size: 1.5em; /* Increase the font size of the progress text */
+}
+
+.weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px; /* Increase gap between week blocks */
+    margin-top: 40px; /* Increase margin above the grid */
+}
+
+.week {
+    width: 60px; /* Increase width of week blocks */
+    height: 60px; /* Increase height of week blocks */
+    border-radius: 4px;
+    background-color: #424242; /* Darker background for week blocks */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Increase font size in week blocks */
+    color: #ffffff; /* Light text color */
+}
+
+.week.lived {
+    background-color: #388e3c; /* Darker green for lived weeks */
+    position: relative;
+}
+
+.week.lived::before, .week.lived::after {
+    content: '';
+    position: absolute;
+    width: 3px; /* Increase width of the cross lines */
+    height: 100%;
+    background-color: #ffffff; /* White cross */
+}
+
+.week.lived::before {
+    transform: rotate(45deg);
+}
+
+.week.lived::after {
+    transform: rotate(-45deg);
+}
+
+.week.recent {
+    background-color: #ff9800;
+}
